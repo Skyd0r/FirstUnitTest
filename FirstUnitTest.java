@@ -1,24 +1,36 @@
 import java.util.Scanner;
-import java.lang.*; 
-import java.util.Date;
 import java.time.LocalTime;
+import java.util.Objects;
 
 
 public class FirstUnitTest {
 
     public static void main(String[] args) {
 
+        String userLanguage = System.getProperty("user.language");
         LocalTime now = LocalTime.now();
         LocalTime midi = LocalTime.of(12, 00, 00);
         LocalTime soir = LocalTime.of(18, 00, 00);
 
+        
+        if (Objects.equals(userLanguage, "fr")){ 
 
-        if (now.isBefore(midi)) {
-            System.out.print("Bon matin");
-        } else if (now.isBefore(soir)) {
-            System.out.print("Bonjour");
+            if (now.isBefore(midi)) {
+                System.out.print("Bon matin");
+            } else if (now.isBefore(soir)) {
+                System.out.print("Bonjour");
+            }else{
+                System.out.print("Bonsoir");
+            }
+
         }else{
-            System.out.print("Bonsoir");
+            if (now.isBefore(midi)) {
+                System.out.print("good morning");
+            } else if (now.isBefore(soir)) {
+                System.out.print("good afternoon");
+            }else{
+                System.out.print("Good evening");
+            }
         }
         
 
