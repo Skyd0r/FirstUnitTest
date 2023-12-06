@@ -40,11 +40,15 @@ public class FirstUnitTest {
 
         String mot = input.nextLine();
 
-        StringBuilder palindrome = new StringBuilder(mot); 
+        StringBuilder reverse = new StringBuilder(mot); 
 
-        mot = palindrome.reverse().toString();
+        String reversemot = reverse.reverse().toString();
 
-        System.out.println(palindrome);
+        System.out.println(reversemot);
+
+        if (reversemot.equals(mot)){
+            System.out.println("Bien dit");
+        }
         
         if (now.isBefore(midi)) {
             System.out.print("Bonne matinée");
